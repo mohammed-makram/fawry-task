@@ -1,0 +1,51 @@
+all command used
+1- cat /etc/resolv.conf
+nameserver 127.0.0.53
+2- dig internal.example.com
+status: SERVFAIL
+3- dig @8.8.8.8 internal.example.com
+status: NXDOMAIN
+4- resolvectl status
+5- sudo nano /etc/resolv.conf
+add nameserver 192.186.1.1
+6- dig internal.example.com
+status: NXDOMAIN
+7- sudo apt update
+8- sudo apt install nmap
+9- nmap -p 80,443 192.168.1.0/24
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-04-28 19:27 EEST
+Nmap scan report for _gateway (192.168.1.1)
+Host is up (0.032s latency).
+
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+10- sudo nano /etc/hosts
+add 192.168.1.1   internal.example.com
+11- ping internal.example.com
+responce done
+12- curl -I http://internal.example.com
+HTTP/1.1 400 Bad Request
+13- telnet internal.example.com 80
+Trying 192.168.1.1...
+Connected to internal.example.com.
+Escape character is '^]'.
+HTTP/1.1 200 OK
+14-sudo mkdir -p /etc/systemd/resolved.conf.d
+15-sudo nano /etc/systemd/resolved.conf.d/dns_servers.conf
+add : [Resolve]
+DNS=8.8.8.8 1.1.1.1
+FallbackDNS=9.9.9.9
+16-sudo systemctl restart systemd-resolved
+17-resolvectl status
+
+
+
+
+
+
+
+
+
+
+
