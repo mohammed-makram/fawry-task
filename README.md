@@ -162,6 +162,5 @@ resolvectl status
 | `telnet` | TCP connection testing |
 | `systemctl` | Service management |
 
-5. **Verification** - Confirm each step works as expected
 
-This guide demonstrates comprehensive DNS troubleshooting using multiple Linux networking tools and configuration methods.
+
