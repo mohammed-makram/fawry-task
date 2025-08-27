@@ -1,6 +1,3 @@
-1- touch mygrep.sh
-2- sudo nano mygrep.sh
-whrite in file 
 #!/bin/bash
 
 if [ $# -lt 2 ]; then
@@ -53,20 +50,3 @@ while IFS= read -r l; do
         fi
     fi
 done < "$file"
-
-3- chmod +x mygrep.sh
-4- touch testfile.txt
-whrite in file :
-Hello world
-This is a test
-another test line
-HELLO AGAIN
-Don't match this line
-Testing one two three
-5- using this command to test
- 1- ./mygrep.sh hello testfile.txt
- 2- ./mygrep.sh -n hello testfile.txt
- 3- ./mygrep.sh -vn hello testfile.txt
- 4- ./mygrep.sh -v testfile.txt 
-
-  
